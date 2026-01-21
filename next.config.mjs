@@ -1,7 +1,11 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production';
+const basePath = isProd ? '/AaronCharlesWebsite' : '';
+
 const nextConfig = {
     output: 'export',
-    basePath: '/AaronCharlesWebsite',
+    basePath: basePath,
+    assetPrefix: basePath,
     images: {
         unoptimized: true,
     },
